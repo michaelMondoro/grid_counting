@@ -19,7 +19,7 @@ The task is to write a routine that will return the number of cells that fall wi
 3. You may use any language you like, but it should be able to run. That is, please do not merely provide a pseudo-code sketch of how you would solve the problem.
 
 ### Solution/Usage
-Each different algorithm in the **algorithms** folder has a `_search` and `_solve` methods that provide the meat of the solution to the grid counting problem. 
+Each different algorithm in the **algorithms** folder has respective `_search` and `_solve` methods that provide the solution to the grid counting problem. 
 
 The main program is run by providing the algorithm you want to use as well as the example you want to solve:
 
