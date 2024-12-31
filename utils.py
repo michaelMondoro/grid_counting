@@ -65,6 +65,8 @@ def show_plot(arr, example, neighbors, t):
     plt.title(f"Example {example} | {len(neighbors)} neighbors | {t}sec ")
     plt.show()
 
+# Returns a modified grid with + values set to 0 and neighbors set to 1
+# This grid is used for creating colored pyplot
 def modify_grid(grid, neighbors):
     new_arr = grid.copy()
     for i in neighbors:

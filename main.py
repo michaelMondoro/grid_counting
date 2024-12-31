@@ -1,8 +1,8 @@
 import sys
 import matplotlib.pyplot as plt
-from full_solve import *
-from window_solve import *
-from inverted_solve import *
+from algorithms.full_solve import *
+from algorithms.window_solve import *
+from algorithms.inverted_solve import *
 from utils import *
 
 if __name__ == "__main__":
