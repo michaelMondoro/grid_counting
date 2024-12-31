@@ -4,7 +4,7 @@ from algorithms.inverted_solve import *
 from utils import *
 
 # Check to see if we have more - values than +
-def check_optimal(grid):
+def check_optimal(grid:list):
     neg = 0
     size = len(grid) * len(grid[0])
     for y, row in enumerate(grid):
