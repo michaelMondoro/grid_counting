@@ -28,7 +28,6 @@ if __name__ == "__main__":
     else:
         elapsed, neighbors = inverted_solve(grid, N)
 
-    # Modify our grid with 0s for display
     new_arr = modify_grid(grid, neighbors)
 
     # Display results
