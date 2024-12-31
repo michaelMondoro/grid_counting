@@ -51,7 +51,7 @@ def get_example_params(example:int):
     elif example == 10:
         # BIG grid example
         default_arr[5][5] = 1
-        default_arr =  np.concatenate((default_arr, np.full((1000000, 11), -1)))
+        default_arr =  np.concatenate((default_arr, np.full((20000, 11), -1)))
         N = 3
 
     return N, default_arr
