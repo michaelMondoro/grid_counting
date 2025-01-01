@@ -27,7 +27,7 @@ def window_search(cur_x:int, cur_y:int, arr:list, N:int):
 
 def window_solve(arr:list, N:int):
     start_time = time.perf_counter()
-
+    
     neighbors = []
     for y,row in enumerate(arr):
         for x,col in enumerate(row):

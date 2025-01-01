@@ -26,14 +26,13 @@ def is_neighbor(cur_x:int, cur_y:int, arr:list, N:int):
 
 def inverted_solve(arr:list, N:int):
     start_time = time.perf_counter()
-
     neighbors = []
     for y,row in enumerate(arr):
         for x,col in enumerate(row):
             if (col > 0): 
-                neighbors.append((y,x,True))
+                neighbors.append((y,x))
             elif (col < 0 and is_neighbor(x,y, arr, N)):
-                neighbors.append((y,x,False))
+                neighbors.append((y,x))
     
     end_time = time.perf_counter()
     return (end_time-start_time), set(neighbors)
