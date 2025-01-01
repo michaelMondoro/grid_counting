@@ -77,7 +77,6 @@ def show_results(solve, elapsed:float, neighbors:list, new_arr:list, N:int):
     print(f"\nSolver: {solve.__name__} \nN={N}")
     print(f"{len(neighbors)} neighbors")
     print(f"time: {round(elapsed,5)}s")
-    print(f"neighbs: {neighbors}")
     print(new_arr)
 
 # Returns a modified grid with + values set to 0 and neighbors set to 1
