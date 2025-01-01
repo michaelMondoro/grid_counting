@@ -12,32 +12,32 @@ if __name__ == "__main__":
         print("usage:\n python main.py [full | window | inverted | compare] [1-10]")
         exit()
 
+    # Get data values for our example
+    N, grid = get_example_params(example)
     if solver == "full":
-        solvers = [("full", full_solve)]
+        elapsed, neighbors = full_solve(grid, N)
+        new_arr = modify_grid(grid, neighbors)
+        show_results(full_solve, elapsed, neighbors, new_arr, N)
+
     elif solver == "window":
-        solvers = [("window", window_solve)]
+        elapsed, neighbors = window_solve(grid, N)
+        new_arr = modify_grid(grid, neighbors)
+        show_results(window_solve, elapsed, neighbors, new_arr, N)
+
     elif solver == "inverted":
-        solvers = [("inverted", inverted_solve)]
+        elapsed, neighbors = inverted_solve(grid, N)
+        new_arr = modify_grid(grid, neighbors)
+        show_results(inverted_solve, elapsed, neighbors, new_arr, N)
+
     elif solver == "compare":
-        solvers = [("full", full_solve), ("window", window_solve), ("inverted", inverted_solve)]
+        for solve in [full_solve, window_solve, inverted_solve]:
+            elapsed, neighbors = solve(grid, N)
+            new_arr = modify_grid(grid, neighbors)
+            show_results(solve, elapsed, neighbors, new_arr, N)
     else:
         print("valid solvers: [ full, window, inverted, compare ]")
         exit()
-   
-    # Get data values for our example
-    N, grid = get_example_params(example)
-    for solve in solvers:
-        # Run the solver
-        elapsed, neighbors = solve[1](grid, N)
-        # Modify our grid with 0s for display
-        new_arr = modify_grid(grid, neighbors)
-
-        # Display results
-        print(f"\nSolver: {solve[0]} \nN={N}")
-        print(f"{len(neighbors)} neighbors")
-        print(f"time: {round(elapsed,5)}s")
     
-    print(new_arr)
 
     if (example < 10):
         show_plot(new_arr, example, neighbors, round(elapsed,5))

@@ -48,6 +48,14 @@ def get_example_params(example:int):
         default_arr[4][9] = 1
         default_arr[4][10] = 1
         N = 2
+    elif example == 8:
+        default_arr = np.array([[-1, -1],
+                       [-1, -1],
+                       [-1, -1],
+                       [ 1, -1],
+                       [-1, -1],
+                       [-1, -1],])
+        N = 2
     elif example == 10:
         # BIG grid example
         default_arr[5][5] = 1
@@ -65,6 +73,13 @@ def show_plot(arr, example, neighbors, t):
     plt.title(f"Example {example} | {len(neighbors)} neighbors | {t}sec ")
     plt.show()
 
+def show_results(solve, elapsed:float, neighbors:list, new_arr:list, N:int):
+    print(f"\nSolver: {solve.__name__} \nN={N}")
+    print(f"{len(neighbors)} neighbors")
+    print(f"time: {round(elapsed,5)}s")
+    print(f"neighbs: {neighbors}")
+    print(new_arr)
+
 # Returns a modified grid with + values set to 0 and neighbors set to 1
 # This grid is used for creating colored pyplot
 def modify_grid(grid, neighbors):
@@ -75,3 +90,4 @@ def modify_grid(grid, neighbors):
         else:
             new_arr[i[0]][i[1]] = 0
     return new_arr
+
