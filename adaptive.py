@@ -22,14 +22,11 @@ if __name__ == "__main__":
 
     flag = check_optimal(grid)
     # Run the solver
-    print(f"ok {flag}")
     if flag:
         elapsed, neighbors = window_solve(grid, N)
+        new_arr = modify_grid(grid, neighbors)
+        show_results(window_solve, elapsed, neighbors, new_arr, N)
     else:
         elapsed, neighbors = inverted_solve(grid, N)
-
-    new_arr = modify_grid(grid, neighbors)
-
-    # Display results
-    print(f"{len(neighbors)} neighbors")
-    print(f"time: {round(elapsed,5)}s")
+        new_arr = modify_grid(grid, neighbors)
+        show_results(inverted_solve, elapsed, neighbors, new_arr, N)
