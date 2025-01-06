@@ -3,6 +3,8 @@ from algorithms.window_solve import *
 from algorithms.inverted_solve import *
 from utils import *
 
+'''An example of doing an initial check to try to determine which solver to use.'''
+
 # Check to see if we have more - values than +
 def check_optimal(grid:list):
     neg = 0
