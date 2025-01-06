@@ -50,11 +50,15 @@ def get_example_params(example:int):
         N = 2
     elif example == 8:
         default_arr = np.array([[-1, -1],
-                       [-1, -1],
-                       [-1, -1],
-                       [ 1, -1],
-                       [-1, -1],
-                       [-1, -1],])
+                                [-1, -1],
+                                [-1, -1],
+                                [ 1, -1],
+                                [-1, -1],
+                                [-1, -1],])
+        N = 2
+    elif example == 9:
+        default_arr = np.array([[-1, -1],
+                                [-1, 1],])
         N = 2
     elif example == 10:
         # BIG grid example
